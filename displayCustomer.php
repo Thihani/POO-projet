@@ -2,7 +2,7 @@
 include_once 'function.php';
 include_once './class/customer.php';
 
-$bdd = new PDO ('mysql:host=localhost;dbname=boutique','hani','', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); 
+$bdd = new PDO ('mysql:host=localhost;dbname=boutique','root','root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); 
 $reponse = $bdd->query('SELECT * FROM customers');
 
 while ($donnees = $reponse->fetch())

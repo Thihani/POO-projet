@@ -7,7 +7,12 @@ function displayArticle(Article $Article)
 
 function displayCat(Catalogue $Catalogue)
 {
-    echo '<p>' . $Catalogue->getCatalogue(). '</p>'; 
+    while ($donnees = $reponse->fetch())
+    {
+        displayArticle($Catalogue);
+        echo '<p>' . $Catalogue->getCatalogue(). '</p>'; 
+    }
+    
 }
 
 function displayCustomer (Customer $Customer)
@@ -19,3 +24,9 @@ function displayCustomerList (CustomerList $CustomerList)
 {
     echo '<p>' . $CustomerList->getCustomerList(). '</p>'; 
 }
+
+function displayShoes (Shoes $Shoes)
+{
+    echo '<p>' .' Shoes ID: '. $Shoes->getId() .' - Product name: '. $Shoes->getName() . ' - Price: ' . $Shoes->getPrice(). ' - Size: '.$Shoes->getSize() . '</p>';
+}
+
