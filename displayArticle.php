@@ -1,6 +1,5 @@
 <?php
 include 'function.php';
-include './class/article.php';
 
 $bdd = new PDO ('mysql:host=localhost;dbname=boutique','root','root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); 
 $reponse = $bdd->query('SELECT * FROM products');
