@@ -1,4 +1,6 @@
 <?php
+include './class/article.php';
+
 function displayArticle(Article $Article)
 {   
     echo '<p>' . 'Product ID:' . $Article->getId(). ' - Product name: '. $Article->getName() . ' - Price: ' . $Article->getPrice().'</p>';
@@ -7,10 +9,16 @@ function displayArticle(Article $Article)
 
 function displayCat(Catalogue $Catalogue)
 {
-    while ($donnees = $reponse->fetch())
+    $myCat = $Catalogue->getCatalogue();
+    echo '<pre>';
+    var_dump($myCat);
+    echo '</pre>';
+
+    foreach($myCat as $article) 
     {
-        displayArticle($Catalogue);
-        echo '<p>' . $Catalogue->getCatalogue(). '</p>'; 
+        $newarticle = new Article ($article['id'],$article['name'],$article['price']);
+        displayArticle($newarticle);
+       
     }
     
 }

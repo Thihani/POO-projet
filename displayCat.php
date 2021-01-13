@@ -1,8 +1,7 @@
 <?php
 include './class/catalogue.php';
-include 'function';
+include 'function.php';
 
-    $displayCatalogue = new Catalogue($reponse);
+    $displayCatalogue = new Catalogue();
     displayCat($displayCatalogue);
 
-$reponse->closeCursor();
