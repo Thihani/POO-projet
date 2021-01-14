@@ -57,9 +57,9 @@ function displayShoes (Shoes $Shoes)
 
 function displayPanier(Panier $Panier)
 {
-    foreach($Panier->getSelectArt() as $id => $quantity)
+    foreach($Panier->getSelectArt() as $key => $value)
     {
-        echo '<p>' . $id. '- quantity: '. $quantity .'</p>'; 
+        echo '<p>' . $key. '- quantity: '. $value .'</p>'; 
     }
     
 }

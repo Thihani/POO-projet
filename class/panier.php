@@ -29,4 +29,9 @@ class Panier
        return $this -> selectArt; 
     }
 
+    public function setSelectArt($panier)
+    {
+        $this->selectArt=$panier;
+    }
+
 }
